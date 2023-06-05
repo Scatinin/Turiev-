@@ -1,24 +1,24 @@
-def schet():
-    print("Отгадайте 3 загадки")
-a=input("Зимой и летом, одним цветом. Ваш ответ: ")
-b=input("Бел, а не сахар, нет ног, а идет. Ваш ответ: ")
-c=input("Чем больше взяли, тем больше стала. Ваш ответ: ")
-q="елка"
-w="снег"
-e="яма"
-if a==q:
-    print("Верно")
-else:
-    print("Неверно")
-if b==w:
-    print("Верно")
-else:
-    print("Неверно")
-if c==e:
-    print("Верно")
-else:
-    print("Неверно")
-x = schet()
-y = schet()
-z = schet()  
-    
+def XOR_cipher(msg, key):
+    """Функция для зашифровки сообщения 'msg' с помощью ключа 'key'"""
+    res = ""
+    for i in range(len(msg)):
+        res += chr(ord(msg[i]) ^ ord(key[i % len(key)]))
+    return res
+
+def XOR_uncipher(msg, key):
+    """Функция для расшифровки сообщения 'msg' с помощью ключа 'key'"""
+    res = ""
+    for i in range(len(msg)):
+        res += chr(ord(msg[i]) ^ ord(key[i % len(key)]))
+    return res
+msg = "Привет!"
+key = "Секрет"
+
+
+# Зашифровать сообщение
+ciphered = XOR_cipher(msg, key)
+print("Зашифрованное сообщение:", ciphered)
+
+# Расшифровать сообщение
+unciphered = XOR_uncipher(ciphered, key)
+print("Расшифрованное сообщение:", unciphered)
