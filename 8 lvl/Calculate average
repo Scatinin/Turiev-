@@ -1,0 +1,8 @@
+def find_average(array):
+  sum = 0;
+  total = len(array);
+  if total == 0:
+  	return 0;
+  for num in array:
+    sum += num;
+  return sum / total;
